@@ -9,15 +9,38 @@ import (
 )
 
 const (
-	filename = "./dnsroot.go"
+	outputFilename = "./dnsroot.go"
 )
 
 func OutputFileExists() bool {
-	if _, err := os.Stat(filename); err != nil {
+	if _, err := os.Stat(outputFilename); err != nil {
 		return false
 	}
 
 	return true
+}
+
+func RemoveOutputFile() error {
+	if OutputFileExists() {
+		return os.Remove(outputFilename)
+	}
+
+	return nil
+}
+
+func WriteOutputFile(data []byte) error {
+	f, err := os.Create(outputFilename)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	_, err = f.Write(data)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func GetCurrentOutputFileVersion() (string, bool) {
@@ -26,7 +49,7 @@ func GetCurrentOutputFileVersion() (string, bool) {
 	}
 
 	fset := token.NewFileSet()
-	file, err := parser.ParseFile(fset, filename, nil, parser.ParseComments)
+	file, err := parser.ParseFile(fset, outputFilename, nil, parser.ParseComments)
 	if err != nil {
 		return "", false
 	}
