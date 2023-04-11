@@ -1,5 +1,5 @@
-package consts
+package util
 
-const (
+var (
 	ProgramVersion = "0.0.1"
 )

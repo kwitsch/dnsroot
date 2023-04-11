@@ -1,4 +1,4 @@
-package fileutils
+package util
 
 import (
 	"go/ast"
@@ -6,21 +6,26 @@ import (
 	"go/token"
 	"os"
 	"regexp"
-
-	"github.com/kwitsch/dnsroot/internal/consts"
 )
 
 const (
 	filename = "./dnsroot.go"
 )
 
-func GetCurrentVersion() (string, bool) {
+func OutputFileExists() bool {
 	if _, err := os.Stat(filename); err != nil {
+		return false
+	}
+
+	return true
+}
+
+func GetCurrentOutputFileVersion() (string, bool) {
+	if !OutputFileExists() {
 		return "", false
 	}
 
 	fset := token.NewFileSet()
-	//Parse the file and create an AST
 	file, err := parser.ParseFile(fset, filename, nil, parser.ParseComments)
 	if err != nil {
 		return "", false
@@ -39,7 +44,7 @@ func isCurrentProgramVersion(comentGroups []*ast.CommentGroup) bool {
 		for _, c := range cg.List {
 			vs := ivr.FindStringSubmatch(c.Text)
 			if len(vs) > 1 {
-				return (vs[1] == consts.ProgramVersion)
+				return (vs[1] == ProgramVersion)
 			}
 		}
 	}
