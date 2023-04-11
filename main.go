@@ -19,5 +19,6 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Println("Environment =", envVar)
-	fileutils.GetCurrentVersion()
+	vs, found := fileutils.GetCurrentVersion()
+	fmt.Println(vs, found)
 }

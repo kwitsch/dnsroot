@@ -1,10 +1,13 @@
 package fileutils
 
 import (
-	"fmt"
+	"go/ast"
 	"go/parser"
 	"go/token"
 	"os"
+	"regexp"
+
+	"github.com/kwitsch/dnsroot/internal/consts"
 )
 
 const (
@@ -23,10 +26,35 @@ func GetCurrentVersion() (string, bool) {
 		return "", false
 	}
 
-	for _, cg := range file.Comments {
+	if !isCurrentProgramVersion(file.Comments) {
+		return "", false
+	}
+
+	return getInternicVersion(file.Comments)
+}
+
+func isCurrentProgramVersion(comentGroups []*ast.CommentGroup) bool {
+	ivr := regexp.MustCompile(`^// dnsroot version: (\d\.\d\.\d)$`)
+	for _, cg := range comentGroups {
 		for _, c := range cg.List {
-			fmt.Println(c.Text)
+			vs := ivr.FindStringSubmatch(c.Text)
+			if len(vs) > 1 {
+				return (vs[1] == consts.ProgramVersion)
+			}
 		}
 	}
-	return "", true
+	return false
+}
+
+func getInternicVersion(comentGroups []*ast.CommentGroup) (string, bool) {
+	ivr := regexp.MustCompile(`^// InterNIC version: (\d+)$`)
+	for _, cg := range comentGroups {
+		for _, c := range cg.List {
+			vs := ivr.FindStringSubmatch(c.Text)
+			if len(vs) > 1 {
+				return vs[1], true
+			}
+		}
+	}
+	return "", false
 }
