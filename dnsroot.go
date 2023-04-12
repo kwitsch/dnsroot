@@ -18,3 +18,45 @@ type RootServer struct {
 	A          net.IP
 	AAAA       net.IP
 }
+
+var _rootServers = []*RootServer{
+    {
+		Name: "A.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "B.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "C.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "D.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "E.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "F.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "G.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "H.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "I.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "J.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "K.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "L.ROOT-SERVERS.NET",
+	},
+    {
+		Name: "M.ROOT-SERVERS.NET",
+	},
+}

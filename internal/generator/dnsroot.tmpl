@@ -18,3 +18,11 @@ type RootServer struct {
 	A          net.IP
 	AAAA       net.IP
 }
+
+var _rootServers = []*RootServer{
+	{{- range $server := .rootfile.Servers }}
+    {
+		Name: "{{ $server.Name }}",
+	},
+    {{- end}}
+}
