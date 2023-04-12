@@ -20,9 +20,13 @@ type RootServer struct {
 }
 
 var _rootServers = []*RootServer{
-	{{- range $server := .rootfile.Servers }}
+{{- range $server := .rootfile.Servers }}
     {
-		Name: "{{ $server.Name }}",
+		Name:       "{{ $server.Name }}",
+		Formerly:   "{{ $server.Formerly }}",
+		OperatedBy: "{{ $server.OperatedBy }}",
+		A:          net.ParseIP("{{ $server.A }}"),
+		AAAA:       net.ParseIP("{{ $server.AAAA }}"),
 	},
-    {{- end}}
+{{- end}}
 }
