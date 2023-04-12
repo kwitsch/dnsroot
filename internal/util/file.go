@@ -62,7 +62,7 @@ func GetCurrentOutputFileVersion() (string, bool) {
 }
 
 func isCurrentProgramVersion(comentGroups []*ast.CommentGroup) bool {
-	ivr := regexp.MustCompile(`^// dnsroot version: (\d\.\d\.\d)$`)
+	ivr := regexp.MustCompile(`^// dnsroot version:\s+(\d\.\d\.\d)$`)
 	for _, cg := range comentGroups {
 		for _, c := range cg.List {
 			vs := ivr.FindStringSubmatch(c.Text)
@@ -75,7 +75,7 @@ func isCurrentProgramVersion(comentGroups []*ast.CommentGroup) bool {
 }
 
 func getInternicVersion(comentGroups []*ast.CommentGroup) (string, bool) {
-	ivr := regexp.MustCompile(`^// InterNIC version: (\d+)$`)
+	ivr := regexp.MustCompile(`^// InterNIC version:\s+(\d+)$`)
 	for _, cg := range comentGroups {
 		for _, c := range cg.List {
 			vs := ivr.FindStringSubmatch(c.Text)

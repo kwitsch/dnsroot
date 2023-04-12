@@ -37,12 +37,11 @@ func Run() error {
 
 	outBuff := bytes.NewBuffer([]byte{})
 	pkg, _ := util.GetGoPackage()
-	err = tmpl.ExecuteTemplate(outBuff, "header", map[string]interface{}{
+	err = tmpl.Execute(outBuff, map[string]interface{}{
 		"package":  pkg,
 		"dversion": util.ProgramVersion,
 		"dupdate":  time.Now().Format(time.DateOnly),
-		"iversion": rf.Version,
-		"iupdate":  rf.LastUpdate,
+		"rootfile": rf,
 	})
 	if err != nil {
 		return err

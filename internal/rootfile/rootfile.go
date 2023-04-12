@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"regexp"
 	"strings"
+	"time"
 )
 
 const (
@@ -52,7 +53,9 @@ func processLines(lines []string) *RootFile {
 	var curSrv RootServer
 	for _, line := range lines {
 		if lastUpdate, found := getRegString(line, _lastUpdateReg); found {
-			res.LastUpdate = lastUpdate
+			if t, err := time.Parse("January 2, 2006", lastUpdate); err == nil {
+				res.LastUpdate = t.Format(time.DateOnly)
+			}
 		} else if version, found := getRegString(line, _zoneVersionReg); found {
 			res.Version = version
 		} else if formerly, found := getRegString(line, _serverFormerlyReg); found {
