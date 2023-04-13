@@ -9,24 +9,28 @@
 package {{.package}}
 
 
-import "net"
+import "github.com/kwitsch/dnsroot/pkg/model"
 
-type RootServer struct {
-	Name       string
-	Formerly   string
-	OperatedBy string
-	A          net.IP
-	AAAA       net.IP
-}
-
-var _rootServers = []*RootServer{
+var _rootServers = model.NewRoot([]*model.RootServer{
 {{- range $server := .rootfile.Servers }}
     {
 		Name:       "{{ $server.Name }}",
 		Formerly:   "{{ $server.Formerly }}",
 		OperatedBy: "{{ $server.OperatedBy }}",
-		A:          net.ParseIP("{{ $server.A }}"),
-		AAAA:       net.ParseIP("{{ $server.AAAA }}"),
+		A:          "{{ $server.A }}",
+		AAAA:       "{{ $server.AAAA }}",
 	},
 {{- end}}
+})
+
+func AllServers() []*model.RootServer {
+	return _rootServers.AllServers()
+}
+
+func AllA() []string {
+	return _rootServers.AllA()
+}
+
+func AllAAAA() []string {
+	return _rootServers.AllAAAA()
 }
