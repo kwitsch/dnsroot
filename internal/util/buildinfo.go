@@ -1,5 +1,3 @@
 package util
 
-var (
-	ProgramVersion = "0.0.1"
-)
+var ProgramVersion = "0.0.1"

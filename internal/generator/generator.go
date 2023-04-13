@@ -15,7 +15,6 @@ import (
 var content embed.FS
 
 func Run() error {
-
 	cofv, cofvCheck := util.GetCurrentOutputFileVersion()
 
 	rf, err := rootfile.Get()
