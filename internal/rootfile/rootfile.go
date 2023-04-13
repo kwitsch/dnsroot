@@ -54,7 +54,7 @@ func processLines(lines []string) *RootFile {
 	for _, line := range lines {
 		if lastUpdate, found := getRegString(line, _lastUpdateReg); found {
 			if t, err := time.Parse("January 2, 2006", lastUpdate); err == nil {
-				res.LastUpdate = t.Format(time.DateOnly)
+				res.LastUpdate = t.Format("2006-01-02")
 			}
 		} else if version, found := getRegString(line, _zoneVersionReg); found {
 			res.Version = version

@@ -39,7 +39,7 @@ func Run() error {
 	err = tmpl.Execute(outBuff, map[string]interface{}{
 		"package":  pkg,
 		"dversion": util.ProgramVersion,
-		"dupdate":  time.Now().Format(time.DateOnly),
+		"dupdate":  time.Now().Format("2006-01-02"),
 		"rootfile": rf,
 	})
 	if err != nil {

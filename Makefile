@@ -10,6 +10,7 @@ gernerate: ## run go generate
 	go generate ./..
 
 lint: ## run golangcli-lint checks
+	go run honnef.co/go/tools/cmd/staticcheck ./...
 	go run github.com/golangci/golangci-lint/cmd/golangci-lint run --timeout 5m
 
 fmt: ## gofmt and goimports all go files
