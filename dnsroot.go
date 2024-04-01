@@ -8,95 +8,94 @@
 
 package main
 
-
 import "github.com/kwitsch/dnsroot/pkg/model"
 
 var _rootServers = model.NewRoot([]*model.RootServer{
-    {
+	{
 		Name:       "A.ROOT-SERVERS.NET",
 		Formerly:   "NS.INTERNIC.NET",
 		OperatedBy: "",
 		A:          "198.41.0.4",
 		AAAA:       "2001:503:ba3e::2:30",
 	},
-    {
+	{
 		Name:       "B.ROOT-SERVERS.NET",
 		Formerly:   "NS1.ISI.EDU",
 		OperatedBy: "",
 		A:          "170.247.170.2",
 		AAAA:       "2801:1b8:10::b",
 	},
-    {
+	{
 		Name:       "C.ROOT-SERVERS.NET",
 		Formerly:   "C.PSI.NET",
 		OperatedBy: "",
 		A:          "192.33.4.12",
 		AAAA:       "2001:500:2::c",
 	},
-    {
+	{
 		Name:       "D.ROOT-SERVERS.NET",
 		Formerly:   "TERP.UMD.EDU",
 		OperatedBy: "",
 		A:          "199.7.91.13",
 		AAAA:       "2001:500:2d::d",
 	},
-    {
+	{
 		Name:       "E.ROOT-SERVERS.NET",
 		Formerly:   "NS.NASA.GOV",
 		OperatedBy: "",
 		A:          "192.203.230.10",
 		AAAA:       "2001:500:a8::e",
 	},
-    {
+	{
 		Name:       "F.ROOT-SERVERS.NET",
 		Formerly:   "NS.ISC.ORG",
 		OperatedBy: "",
 		A:          "192.5.5.241",
 		AAAA:       "2001:500:2f::f",
 	},
-    {
+	{
 		Name:       "G.ROOT-SERVERS.NET",
 		Formerly:   "NS.NIC.DDN.MIL",
 		OperatedBy: "",
 		A:          "192.112.36.4",
 		AAAA:       "2001:500:12::d0d",
 	},
-    {
+	{
 		Name:       "H.ROOT-SERVERS.NET",
 		Formerly:   "AOS.ARL.ARMY.MIL",
 		OperatedBy: "",
 		A:          "198.97.190.53",
 		AAAA:       "2001:500:1::53",
 	},
-    {
+	{
 		Name:       "I.ROOT-SERVERS.NET",
 		Formerly:   "NIC.NORDU.NET",
 		OperatedBy: "",
 		A:          "192.36.148.17",
 		AAAA:       "2001:7fe::53",
 	},
-    {
+	{
 		Name:       "J.ROOT-SERVERS.NET",
 		Formerly:   "",
 		OperatedBy: "VERISIGN, INC.",
 		A:          "192.58.128.30",
 		AAAA:       "2001:503:c27::2:30",
 	},
-    {
+	{
 		Name:       "K.ROOT-SERVERS.NET",
 		Formerly:   "",
 		OperatedBy: "RIPE NCC",
 		A:          "193.0.14.129",
 		AAAA:       "2001:7fd::1",
 	},
-    {
+	{
 		Name:       "L.ROOT-SERVERS.NET",
 		Formerly:   "",
 		OperatedBy: "ICANN",
 		A:          "199.7.83.42",
 		AAAA:       "2001:500:9f::42",
 	},
-    {
+	{
 		Name:       "M.ROOT-SERVERS.NET",
 		Formerly:   "",
 		OperatedBy: "WIDE",
