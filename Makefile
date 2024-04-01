@@ -6,8 +6,8 @@ test: ## run tests
 race: ## run tests with race detector
 	go run github.com/onsi/ginkgo/v2/ginkgo --race ./...
 
-gernerate: ## run go generate
-	go generate ./..
+generate: ## run go generate
+	go generate .
 
 lint: ## run golangcli-lint checks
 	go run honnef.co/go/tools/cmd/staticcheck ./...
