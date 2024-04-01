@@ -1,6 +1,6 @@
 module github.com/kwitsch/dnsroot
 
-go 1.20
+go 1.22
 
 require (
 	honnef.co/go/tools v0.4.3
