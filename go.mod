@@ -1,9 +1,10 @@
 module github.com/kwitsch/dnsroot
 
 go 1.22
+toolchain go1.22.5
 
 require (
-	honnef.co/go/tools v0.4.7
+	honnef.co/go/tools v0.5.0
 	mvdan.cc/gofumpt v0.6.0
 )
 
@@ -188,11 +189,11 @@ require (
 )
 
 require (
-	github.com/BurntSushi/toml v1.4.0 // indirect
+	github.com/BurntSushi/toml v1.4.1-0.20240526193622-a339e1f7089c // indirect
 	github.com/golangci/golangci-lint v1.59.0
 	github.com/onsi/ginkgo/v2 v2.19.0
 	golang.org/x/exp/typeparams v0.0.0-20240314144324-c7f7c6466f7f // indirect
 	golang.org/x/mod v0.17.0 // indirect
 	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/tools v0.21.0 // indirect
+	golang.org/x/tools v0.21.1-0.20240531212143-b6235391adb3 // indirect
 )
