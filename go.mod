@@ -4,7 +4,7 @@ go 1.22
 toolchain go1.22.5
 
 require (
-	honnef.co/go/tools v0.5.0
+	honnef.co/go/tools v0.5.1
 	mvdan.cc/gofumpt v0.6.0
 )
 
