@@ -1,10 +1,10 @@
 module github.com/kwitsch/dnsroot
 
 go 1.22
-toolchain go1.22.5
+toolchain go1.23.6
 
 require (
-	honnef.co/go/tools v0.5.1
+	honnef.co/go/tools v0.6.0
 	mvdan.cc/gofumpt v0.7.0
 )
 
@@ -176,7 +176,7 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
 	golang.org/x/exp v0.0.0-20240904232852-e7e105dedf7e // indirect
-	golang.org/x/sync v0.10.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 	google.golang.org/protobuf v1.35.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
@@ -190,7 +190,7 @@ require (
 	github.com/golangci/golangci-lint v1.61.0
 	github.com/onsi/ginkgo/v2 v2.22.1
 	golang.org/x/exp/typeparams v0.0.0-20240314144324-c7f7c6466f7f // indirect
-	golang.org/x/mod v0.22.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
-	golang.org/x/tools v0.28.0 // indirect
+	golang.org/x/mod v0.23.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/tools v0.30.0 // indirect
 )
